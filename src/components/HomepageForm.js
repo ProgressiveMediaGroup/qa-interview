@@ -7,7 +7,7 @@ const emailRX = value =>
   'Invalid email address' : undefined
 
 const postCodeRX = value =>
-  value && !/^[0-9]{4}$/i.test(value) ?
+  value && !/^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i.test(value) ?
   'Invalid postcode' : undefined
 
 const renderField = ({ input, label, type, meta: { touched, error, warning } }) => (
@@ -34,7 +34,7 @@ class HomepageForm extends Component {
         <div>
           <label>Post Code</label>
           <div>
-            <Field component={renderField} name="post-code" type="text" placeholder="Post Code" validate={postCodeRX} />
+            <Field component={renderField} name="postCode" type="text" placeholder="Post Code" validate={postCodeRX} />
           </div>
         </div>
         <div>

@@ -27,8 +27,13 @@ class Homepage extends Component {
 
   onSubmit = (values) => {
     const { error } = this.props
+    const { name, postCode, email } = values
+
+    if( !name && !postCode && !email ){
+      error(errorConfig)
+    }
+
     console.log(values)
-    error(errorConfig)
   }
 
   render () {
