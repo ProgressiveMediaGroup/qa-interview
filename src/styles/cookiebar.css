@@ -1,0 +1,14 @@
+.cookie-bar {
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: grey;
+  color: white;
+  position: absolute;
+  z-index: 1000; }
+  .cookie-bar > div {
+    width: 960px;
+    margin: auto;
+    padding: 10px 0; }
+    .cookie-bar > div button {
+      float: right; }

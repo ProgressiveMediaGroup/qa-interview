@@ -1,0 +1,53 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: arial, sans-serif; }
+
+#root,
+.route-container {
+  width: 100%;
+  min-height: 100%;
+  position: relative; }
+
+#root {
+  height: 100%; }
+
+header,
+footer {
+  position: absolute;
+  left: 0;
+  width: 100%; }
+
+header {
+  top: 0; }
+
+footer {
+  bottom: 0; }
+
+main {
+  width: 100%;
+  min-height: 100%;
+  padding: 145px 0 50px 0; }
+  main .strap {
+    background-color: #03A2B5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding: 20px 0; }
+    main .strap h1 {
+      color: #f2f2f2;
+      font-size: 3em;
+      font-weight: 600;
+      line-height: 0; }
+    main .strap h2 {
+      color: #f2f2f2;
+      font-size: 2em;
+      font-weight: 600;
+      margin: 20px 0 0 0; }
+  main .body-container {
+    margin-top: 20px; }
+
+.container {
+  margin: auto;
+  width: 960px; }
