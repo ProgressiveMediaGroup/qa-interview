@@ -1,6 +1,5 @@
 
-Page 1
-
+# Page 1
 
 Should have Page Title
 Should have a  Main Header on the Page
@@ -11,7 +10,7 @@ Name, Post Code and email address Text Boxes
                    Clicking OK from Pop Up should navigate to next page
 
 
-Page 2
+# Page 2
 
 Should have Page Title
 
@@ -19,7 +18,7 @@ Reference Link :
                    https://www.lovemoney.com/creditcardssmartsearch#/form/zeroPercentBalanceTransfer
 
 
-Page 3
+# Page 3
 
 Title and Text box and a tooltip on it ( On the following link , there’s tooltip next to ‘Balance to transfer’ on left side of the page)
 Clicking on tooltip should open couple of panels  with a button and close button
