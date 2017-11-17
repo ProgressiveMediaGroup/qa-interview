@@ -1,13 +1,20 @@
 
 # Page 1
 
-Should have Page Title
-Should have a  Main Header on the Page
-Name, Post Code and email address Text Boxes
-                  Validations Error message when Clicking on Button without entering details.
-                   Validation error message when invalid postcode is entered
-                   Clicking on the button when all details are entered there’s a pop up
-                   Clicking OK from Pop Up should navigate to next page
+Should have with:  
+
+* Page Title
+* Main Header
+* Name
+* Post Code
+* email address
+
+Validations Error message when Clicking on Button without entering details.
+Validation error message when invalid postcode is entered
+
+Clicking on the button when all details are entered there’s a pop up
+
+Clicking OK from Pop Up should navigate to next page
 
 
 # Page 2

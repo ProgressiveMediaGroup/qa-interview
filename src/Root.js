@@ -13,6 +13,8 @@ import './styles/main.css'
 
 // Routes
 import Homepage from './pages/Homepage'
+import PageTwo from './pages/PageTwo'
+import PageThree from './pages/PageThree'
 import PageNotFound from './pages/PageNotFound'
 
 // Display Components
@@ -21,9 +23,10 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 
 // Reducers
-import technicalTestReducers from './reducers'
+import qaTestReducers from './reducers'
+
 let store = createStore(
-  technicalTestReducers,
+  qaTestReducers,
   {},
   compose(
     typeof window === "object" &&
@@ -45,6 +48,8 @@ class Root extends Component {
 
             <Switch>
               <Route exact path='/' component={Homepage} />
+              <Route exact path='/page-two' component={PageTwo} />
+              <Route exact path='/page-three' component={PageThree} />
               <Route component={PageNotFound} />
             </Switch>
 

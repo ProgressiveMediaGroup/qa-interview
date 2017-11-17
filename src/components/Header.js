@@ -30,6 +30,8 @@ class Header extends Component {
         <div className='breadcrumbs'>
           <div className='container'>
             <Link to='/'>/ Home /</Link>
+            <Link to='/page-two'>/ Page Two /</Link>
+            <Link to='/page-three'>/ Page Three /</Link>
           </div>
         </div>
       </header>
