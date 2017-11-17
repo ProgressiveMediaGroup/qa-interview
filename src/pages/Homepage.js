@@ -1,48 +1,24 @@
 // Node_Modules
-import React, {Component} from 'react'
-import {Field, reduxForm} from 'redux-form'
+import React, { Component } from 'react'
 
 // Display Components
 import Body from '../components/Body'
+import HomepageForm from '../components/HomepageForm'
 
-class HomepageForm extends Component {
+class Homepage extends Component {
 
-  constructor(props) {
-    super(props)
-    this.submit = this.submit.bind(this)
-  }
-
-  submit = (values) => {
+  onSubmit = (values) => {
     console.log(values)
   }
 
-  render() {
-    return (<Body heading='Progressive Content' subheading='QA Test'>
-      <p>[Copy required]</p>
-      <form onSubmit={this.submit}>
-        <div>
-          <label>Name</label>
-          <div>
-            <Field name="name" component="input" type="text" placeholder="Name"/>
-          </div>
-        </div>
-        <div>
-          <label>Post Code</label>
-          <div>
-            <Field name="post-code" component="input" type="text" placeholder="Post Code"/>
-          </div>
-        </div>
-        <div>
-          <label>Email</label>
-          <div>
-            <Field name="email" component="input" type="text" placeholder="Email"/>
-          </div>
-        </div>
-      </form>
-    </Body>)
+  render () {
+    return (
+      <Body heading='Progressive Content' subheading='QA Test'>
+        <p>[Copy required]</p>
+        <HomepageForm onSubmit={this.onSubmit} />
+      </Body>
+    )
   }
 }
 
-HomepageForm = reduxForm({form: 'home'})(HomepageForm)
-
-export default HomepageForm
+export default Homepage
