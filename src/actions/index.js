@@ -1,5 +1,5 @@
 import {acceptCookies} from './cookiebar'
 
-export {
+export default {
   acceptCookies
 }
