@@ -20,10 +20,12 @@ header {
     header .menu a {
       color: #f2f2f2;
       font-weight: 600;
-      background-color: #1976D2;
       padding: 13px;
       position: relative;
       top: 12px; }
+      header .menu a.selected, header .menu a:hover {
+        background-color: #1976D2;
+        text-decoration: none; }
   header .breadcrumbs {
     background-color: #1976D2;
     height: 42px; }

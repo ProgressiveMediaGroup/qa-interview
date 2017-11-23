@@ -10,6 +10,8 @@
     "object-assign": "^4.1.1",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
+    "react-bootstrap": "^0.31.5",
+    "react-bootstrap-date-picker": "github:pushtell/react-bootstrap-date-picker#f622dc8872dd180324ba5d3c295d009848f5814b",
     "react-dom": "^16.0.0",
     "react-notification-system-redux": "^1.2.0",
     "react-redux": "^5.0.6",
@@ -27,7 +29,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "package": "node utils/package-files.js",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "cp build/index.html build/200.html && surge build/"
   },
   "devDependencies": {
     "copy-dir": "^0.3.0",

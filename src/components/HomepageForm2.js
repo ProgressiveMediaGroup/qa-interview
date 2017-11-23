@@ -96,7 +96,7 @@ const renderCheckbox = function ({ input, label, type, placeholder, helptext, me
     </Row>)
 }
 
-class HomepageForm extends Component {
+class HomepageForm2 extends Component {
   onSubmit (values) {
     console.log(values);
     console.log('hrkki');
@@ -106,40 +106,39 @@ class HomepageForm extends Component {
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props
     return (
-      <form onSubmit={handleSubmit}>
+      <div>
+        <p>* marked as mandatory fields</p>
         <Row>
           <Col md={12}>
             <FormGroup>
-              <label>Gender</label>
+              <label>Gender *</label>
               <br />
-              <Field name="gender" component="input" type="radio" value="male" /> Male
+              <label><input name="gender" type="radio" value="male" /> Male</label>
               <br />
-              <Field name="gender" component="input" type="radio" value="female" /> Female
+              <label><input name="gender" type="radio" value="female" /> Female</label>
             </FormGroup>
           </Col>
         </Row>
 
+        <form onSubmit={handleSubmit}>
+          <Field component={renderSelectField} label="Title *" name="title" type="select" validate={required} />
+          <Field component={renderTextField} label="First name *" name="firstname" type="text" placeholder="Please enter your first name here" validate={required} />
+          <Field component={renderTextField} label="Last name *" name="lastname" type="text" placeholder="Please enter your last name here" validate={required} />
+          <Field component={renderTextField} label="Pstcode *" name="postcode" type="text" placeholder="e.g. XX99 9XX" validate={[required,postCodeRX]} />
+          <Field component={renderTextField} label="Email Address" name="email" type="text" placeholder="Please enter your email address here" validate={[required,emailRX]} />
+          <Field component={renderDateField} label="Date of Birth *" name="date" type="date" placeholder="DD/MM/YYYY" validate={[required]} />
+          <Field component={renderCheckbox} label="I agree with the terms and conditions" name="agree" type="checkbox" placeholder="jhkh" />
 
-        <Field component={renderSelectField} label="Title" name="title" type="select" validate={required} />
-        <Field component={renderTextField} label="First name" name="firstname" type="text" placeholder="Please enter your first name here" validate={required} />
-        <Field component={renderTextField} label="Last name" name="lastname" type="text" placeholder="Please enter your last name here" validate={required} />
-        <Field component={renderTextField} label="Postcode" name="postcode" type="text" placeholder="e.g. XX99 9XX" validate={[required,postCodeRX]} />
-        <Field component={renderTextField} label="Email Address" name="email" type="text" placeholder="Please enter your email address here" validate={[required,emailRX]} />
+          <br/>
 
-        {/* Date Of Birth */}
-
-        <Field component={renderDateField} label="Date of Birth" name="date" type="date" placeholder="DD/MM/YYYY" validate={[required]} />
-
-        <Field component={renderCheckbox} label="I agree with the terms and conditions" name="agree" type="checkbox" placeholder="jhkh" validate={required} />
-        <br/>
-
-        <button type="submit" className="btn btn-success" disabled={pristine || submitting}>Submit</button>
-        <button type="button" className="btn btn-danger" style={{marginLeft: '10px'}} disabled={pristine || submitting} onClick={reset}>Clear Values</button>
-      </form>
+          <button type="submit" className="btn btn-success" disabled={pristine || submitting}>Submit</button>
+          <button type="button" className="btn btn-danger" style={{marginLeft: '10px'}} disabled={pristine || submitting} onClick={reset}>Clear Values</button>
+        </form>
+      </div>
     )
   }
 }
 
-HomepageForm = reduxForm({form: 'home'})(HomepageForm)
+HomepageForm2 = reduxForm({form: 'manual'})(HomepageForm2)
 
-export default HomepageForm
+export default HomepageForm2

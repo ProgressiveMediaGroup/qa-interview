@@ -12,6 +12,14 @@ import '../styles/header.css'
 import Navigation from './Navigation'
 
 class Header extends Component {
+  renderBreadcrumbs () {
+    if (this.props.url !== '/') {
+      return <Link to={this.props.url}>/ {this.props.pagetitle} /</Link>
+    }
+
+    return '';
+  }
+
   render () {
     return (
       <header>
@@ -24,14 +32,13 @@ class Header extends Component {
         </div>
         <div className='menu'>
           <div className='container'>
-            <Navigation />
+            <Navigation url={this.props.url} />
           </div>
         </div>
         <div className='breadcrumbs'>
           <div className='container'>
             <Link to='/'>/ Home /</Link>
-            <Link to='/page-two'>/ Page Two /</Link>
-            <Link to='/page-three'>/ Page Three /</Link>
+            {this.renderBreadcrumbs()}
           </div>
         </div>
       </header>

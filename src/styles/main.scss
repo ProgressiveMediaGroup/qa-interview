@@ -33,6 +33,19 @@ footer {
   bottom: 0;
 }
 
+.messagelist {
+  .loading {
+    width: 100%;
+    height: 50px;
+    background: url('../assets/ajax-loader.gif') center center no-repeat transparent;
+  }
+
+  .loadmore {
+    margin: auto;
+    display: block;
+  }
+}
+
 main {
   width: 100%;
   min-height: 100%;

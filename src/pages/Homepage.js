@@ -1,70 +1,33 @@
 // Node_Modules
 import React, { Component } from 'react'
-import { connect } from "react-redux"
-import PropTypes from "prop-types"
-import { success, error } from 'react-notification-system-redux'
+import { Link } from 'react-router-dom'
 
 // Display Components
+import Header from '../components/Header'
 import Body from '../components/Body'
-import HomepageForm from '../components/HomepageForm'
-
-const successConfig = {
-  title: "Success",
-  message: "Sign in successful",
-  position: "tc",
-  autoDismiss: 5
-}
-
-const errorConfig = {
-  title: "Error",
-  message: "Please complete all fields marked as required",
-  position: "tc",
-  autoDismiss: 5
-}
-
 
 class Homepage extends Component {
-
-  onSubmit = (values) => {
-    const { error } = this.props
-    const { name, postCode, email } = values
-
-    if( !name && !postCode && !email ){
-      error(errorConfig)
-    }
-
-    console.log(values)
-  }
-
   render () {
     return (
-      <Body heading='Progressive Content' subheading='QA Test'>
-        <p>[Copy required]</p>
-        <HomepageForm onSubmit={this.onSubmit} />
-      </Body>
+      <div>
+        <Header url='/' pagetitle='Home' />
+        <Body heading='Progressive Content' subheading='Online QA Test'>
+          <h2>Automation QA</h2>
+          <p>Introductory text here</p>
+          <ul>
+            <li><Link to="/automated/test-case-1">Test Case 1</Link></li>
+            <li><Link to="/automated/test-case-2">Test Case 2</Link></li>
+          </ul>
+          <hr />
+          <h2>Manual QA</h2>
+          <p>Introductory text here</p>
+          <ul>
+            <li><Link to="/manual/test-case-1">Test Case 1</Link></li>
+          </ul>
+        </Body>
+      </div>
     )
   }
 }
 
-Homepage.propTypes = {
-  notifications: PropTypes.array
-}
-
-function mapStateToProps(state) {
-  return {
-    notifications: state.notifications
-  }
-}
-
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    success: message => {
-      dispatch(success(message))
-    },
-    error: message => {
-      dispatch(error(message))
-    }
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Homepage)
+export default Homepage
