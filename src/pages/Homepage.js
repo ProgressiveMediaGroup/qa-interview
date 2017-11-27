@@ -13,14 +13,12 @@ class Homepage extends Component {
         <Header url='/' pagetitle='Home' />
         <Body heading='Progressive Content' subheading='Online QA Test'>
           <h2>Automation QA</h2>
-          <p>Introductory text here</p>
           <ul>
             <li><Link to="/automated/test-case-1">Test Case 1</Link></li>
             <li><Link to="/automated/test-case-2">Test Case 2</Link></li>
           </ul>
           <hr />
           <h2>Manual QA</h2>
-          <p>Introductory text here</p>
           <ul>
             <li><Link to="/manual/test-case-1">Test Case 1</Link></li>
           </ul>
